@@ -38,9 +38,9 @@ encoding_rs = { version = "0.8", optional = true }
 sync_wrapper = { version = "0.1" } 
 cookie_store = { version = "0.15", optional = true, default-features = false, features = ["preserve_order"] }
 log = "0.4"
-webpki = { version = "0.22", optional = true }
-webpki-roots = { version = "0.22", optional = true }
-rustls = { version = "0.20.1", optional = true }
+webpki = { git = "https://github.com/killyourphone/webpki", branch = "esp32", optional = true}
+webpki-roots = { git = "https://github.com/killyourphone/webpki-roots", branch = "esp32", optional = true }
+rustls = { git = "https://github.com/killyourphone/rustls", package = "rustls", branch = "esp32", optional = true }
 rustls-native-certs = { version = "0.6", optional = true }
 native-tls = { version = "0.2", optional = true }
 flate2 = { version = "1.0.22", optional = true }
@@ -49,7 +49,7 @@ brotli-decompressor = { version = "2.3.2", optional = true }
 [dev-dependencies]
 serde = { version = "1", features = ["derive"] }
 env_logger = "0.9"
-rustls = { version = "0.20", features = ["dangerous_configuration"] }
+rustls = { git = "https://github.com/killyourphone/rustls", package = "rustls", branch = "esp32", features = ["dangerous_configuration"] }
 rustls-pemfile = { version = "0.2" }
 mbedtls = { version = "0.8.1" }
 
